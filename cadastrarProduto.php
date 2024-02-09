@@ -1,9 +1,8 @@
 <?php include("header.php") ?>
 
-
 <?php
     //Variáveis
-    $nomeProduto = $precoProduto = $descricaoProduto = "";
+    $nomeProduto = $precoProduto = $descricaoProduto = $listConsole = $dataProduto = "";
     $tudoCerto = True;
     
     //Validação
@@ -32,7 +31,12 @@
             $descricaoProduto = testar_entrada($_POST["descricaoProduto"]);
         }
 
+        $listConsole = testar_entrada($_POST["listConsole"]);
 
+        $dataProduto = date("Y-m-d");
+        $diaProduto  = substr($dataProduto, 8, 2);
+        $mesProduto  = substr($dataProduto, 5, 2);
+        $anoProduto  = substr($dataProduto, 0, 4);
 
 
 
@@ -69,8 +73,8 @@
 
         if($tudoCerto && $uploadOK){
 
-            $inserirProduto = "INSERT INTO produtos (nomeProduto, precoProduto, descricaoProduto, fotoProduto)
-                                    VALUES ('$nomeProduto', '$precoProduto', '$descricaoProduto', '$fotoProduto')";
+            $inserirProduto = "INSERT INTO produtos (nomeProduto, listConsole, precoProduto, descricaoProduto, fotoProduto, dataProduto, statusProduto)
+                                    VALUES ('$nomeProduto', '$listConsole', '$precoProduto', '$descricaoProduto', '$fotoProduto', '$dataProduto', 'disponivel')";
 
             include("conexaoBD.php");
 
@@ -88,6 +92,10 @@
                                 <td>$nomeProduto</td>
                             </tr>
                             <tr>
+                                <th>Plataforma</th>
+                                <td>$listConsole</td>
+                            </tr>
+                            <tr>
                                 <th>Preço</th>
                                 <td>$precoProduto</td>
                             </tr>
@@ -95,7 +103,12 @@
                                 <th>Descrição</th>
                                 <td>$descricaoProduto</td>
                             </tr>
+                            <tr>
+                                <th>DATA: </th>
+                                <td>$dataProduto</td>
+                            </tr>
                         </table>
+                    </div>
                 ";
             }
             else{
@@ -118,3 +131,4 @@
     }
 ?>
 
+<?php include("footer.php") ?>

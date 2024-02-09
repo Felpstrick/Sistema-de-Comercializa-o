@@ -5,7 +5,6 @@
     $senhaBD    = "root";
     $database   = "bestgames";
 
-    //Função do PHP para estabelecer conexao com o BD
     $link = mysqli_connect($servidorBD, $usuarioBD, $senhaBD, $database);
 
     if(!$link){

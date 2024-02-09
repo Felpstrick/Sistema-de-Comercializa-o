@@ -1,5 +1,7 @@
+
 <?php include("header.php"); ?>
 
+<div class="container-fluid">
 <?php
     //Inclui o arquivo de conexão com o Banco de Dados
     include("conexaoBD.php");
@@ -9,7 +11,7 @@
     if(isset($_GET["filtroProduto"])){
         $filtroProduto = $_GET["filtroProduto"];
         if ($filtroProduto != "todos"){ 
-            $listarProdutos = "SELECT * FROM Produtos WHERE statusProduto LIKE '$filtroProduto'";
+            $listarProdutos = "SELECT * FROM Produtos WHERE statusProduto LIKE '$filtroProduto' ORDER BY dataProduto DESC";
         }
         switch($filtroProduto){
             case "todos" : $mensagemFiltro = "no total";
@@ -21,10 +23,10 @@
             case "vendido" : $mensagemFiltro = "que já foram vendidos";
             break;
         }
-    } 
-    else{
+    } else{
         $mensagemFiltro = "no total";
     }
+
     $res = mysqli_query($link, $listarProdutos); //Executa o comando de listagem
     $totalProdutos = mysqli_num_rows($res); //Função para retornar a quantidade de registros da tabela
     if($totalProdutos > 0){
@@ -63,15 +65,15 @@
                 $precoProduto     = $registro["precoProduto"];
                 $listConsole     = $registro["listConsole"];
                 //$vendedorProduto  = $registro["Usuarios_idUsuario"];
-                //$dataProduto      = $registro["dataProduto"];
+                $dataProduto      = $registro["dataProduto"];
                 //$horaProduto      = $registro["horaProduto"];
                 $statusProduto    = $registro["statusProduto"];
 
-                //$diaProduto  = substr($dataProduto, 8, 2);
-                //$mesProduto  = substr($dataProduto, 5, 2);
-                //$anoProduto  = substr($dataProduto, 0, 4);
+                $diaProduto  = substr($dataProduto, 8, 2);
+                $mesProduto  = substr($dataProduto, 5, 2);
+                $anoProduto  = substr($dataProduto, 0, 4);
 
-                //$dataProduto = ("$diaProduto/$mesProduto/$anoProduto");
+                $dataProduto = ("$diaProduto/$mesProduto/$anoProduto");
 
                 $precoProduto = str_replace('.', ',', $precoProduto); //Substitui os pontos por vírgulas para exibir o valor do Produto.
 
@@ -112,4 +114,125 @@
     }
 
 ?>
+
+
 <?php include("footer.php"); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ 
+            
+    -->

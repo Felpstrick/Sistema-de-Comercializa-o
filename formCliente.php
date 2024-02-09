@@ -1,68 +1,63 @@
 <?php include("header.php"); ?>
 
-    <h2>Cadastrar Cliente</h2>
-    <style>
-            input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            }
 
-            input[type=submit] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            }
 
-            input[type=submit]:hover {
-            background-color: #45a049;
-            }
+    <h2 style="margin-top:15px">Cadastrar Cliente</h2>
 
-            div {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-            }
-        </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 
     <form action="cadastrarCliente.php" method="POST" enctype="multipart/form-data">
+
+        <div class="form">
+            <label for="fotoProduto">Foto:</label>
+            <input type="file" class="btn btn-link" name="fotoCliente">
+        </div>
        
     
-        <div class="form-floating mb-3 mt-3">
-            <input type="text" class="form-control" placeholder="Informe o seu nome Completo" name="nomeCliente" required>
+        <div class="form">
             <label for="nomeCliente" class="form-label">*Nome:</label>
+            <input type="text" class="form-control" placeholder="Informe o seu nome Completo" name="nomeCliente" required>
+            
         </div>
 
-        <div class="form-floating mb-3 mt-3">
-            <input type="text" class="form-control" placeholder="Informe o Email" name="emailCliente" required>
+        <div class="form">
             <label for="emailCliente" class="form-label">*Email:</label>
+            <input type="text" class="form-control" placeholder="Informe o Email" name="emailCliente" required>
+            
         </div>
 
-        <div class="form-floating mb-3 mt-3">
-            <input type="password" class="form-control" placeholder="Informe a Senha" name="senhaCliente" required>
+        <div class="form">
+            <label for="cpfCliente" class="form-label">*CPF:</label>
+            <input type="text" class="form-control" placeholder="Informe seu CPF" name="cpfCliente" id="cpfCliente" required>
+            
+        </div>
+
+        <div class="form">
+            <label for="telefoneCliente" class="form-label">*Telefone:</label>
+            <input type="text" class="form-control" placeholder="Informe o seu telefone" name="telefoneCliente" id="telefoneCliente" required>
+            
+        </div>
+
+        <div class="form">
             <label for="senhaCliente" class="form-label">*Senha:</label>
+            <input type="password" class="form-control" placeholder="Informe a Senha" name="senhaCliente" required>
+            
         </div>
 
-        <div class="form-floating mb-3 mt-3">
-            <input type="password" class="form-control" placeholder="Confirme a Senha" name="confirmarSenhaCliente" required>
+        <div class="form">
             <label for="confirmarSenhaCliente" class="form-label">*Confirme a Senha:</label>
+            <input type="password" class="form-control" placeholder="Confirme a Senha" name="confirmarSenhaCliente" required>
+            
         </div>
         <div style="margin-top:30px; margin-bottom:30px;">
-                <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+                <button type="submit" class="w3-button w3-black w3-padding-large w3-large">Cadastrar</button>
             </div>
 
         
 
     </form>
+
+
 
 
     <?php include("footer.php"); ?>
