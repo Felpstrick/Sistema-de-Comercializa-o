@@ -30,6 +30,30 @@
                 document.getElementById("mySidebar").style.display = "none";
             }
 
+            function smallscreen(){
+                let smallscrenMenu = document.querySelector('.smallscreen-menu');
+                if(smallscrenMenu.classList.contains('open')){
+                    smallscrenMenu.classList.remove('open');
+                }
+                else{
+                    smallscrenMenu.classList.add('open');
+                }
+            }
+            var search = document.getElementById("pesquisar");
+
+            search.addEventListener("keydown", function(event){
+                if (event.key ==="Enter"){
+                    searchData();
+                }
+            });
+            function searchData(){
+                window.location = "index.php?search="+search.value;
+            }
+
+            function confirmarOperacao() {
+                return confirm("Deseja realmente excluir sua conta?");
+            }
+
         </script>
 
     </body>

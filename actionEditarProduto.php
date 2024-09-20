@@ -4,7 +4,6 @@
     //Variáveis
     $nomeProduto = $precoProduto = $descricaoProduto = $marcaConsole = $listConsole = $dataProduto = "";
     $tudoCerto = True;
-    $idAdm = $_POST["idAdm"];
     
     //Validação
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -36,7 +35,7 @@
 
         $listConsole = testar_entrada($_POST["listConsole"]);
 
-        
+        $idProduto = $_POST['idProduto'];
 
         $dataProduto = date("Y-m-d");
         $diaProduto  = substr($dataProduto, 8, 2);
@@ -78,20 +77,11 @@
 
         if($tudoCerto && $uploadOK){
 
-            $inserirProduto = "INSERT INTO produtos (idAdm, nomeProduto, marcaConsole, listConsole, precoProduto, descricaoProduto, fotoProduto, dataProduto, statusProduto)
-                                    VALUES ('$idAdm', '$nomeProduto', '$marcaConsole', '$listConsole', '$precoProduto', '$descricaoProduto', '$fotoProduto', '$dataProduto', 'disponivel')";
+            $alterarProduto = "UPDATE produtos SET nomeProduto='$nomeProduto', precoProduto='$precoProduto', descricaoProduto='$descricaoProduto', marcaConsole='$marcaConsole', listConsole='$listConsole', dataProduto='$dataProduto', fotoProduto='$fotoProduto' where idProduto='$idProduto' ";
 
             include("conexaoBD.php");
-            
-            //Seleciona informaçoes do adm para colocar na tabela
-            $sqlSelect = "SELECT * FROM clientes WHERE idCliente = '$idCliente'";
-            $result = $link->query($sqlSelect);
 
-            while ($registro = mysqli_fetch_assoc($result)) {
-                $nomeAdm = $registro["nomeCliente"];
-            }
-
-            if(mysqli_query($link, $inserirProduto)){
+            if(mysqli_query($link, $alterarProduto)){
     
                 echo "<div class='alert alert-success text-center'><strong>Produto</strong> cadastrado(a) com sucesso!</div>";
         
@@ -100,14 +90,6 @@
                             <img src='$fotoProduto' width='150'>
                         </div>
                         <table class='table'>
-                            <tr>
-                                <th>ID do Administrador</th>
-                                <td>$idCliente</td>
-                            </tr>
-                            <tr>
-                                <th>Nome do Administrador</th>
-                                <td>$nomeAdm</td>
-                            </tr>
                             <tr>
                                 <th>Nome</th>
                                 <td>$nomeProduto</td>

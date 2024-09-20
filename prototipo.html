@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Best Games</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CDN para importar os ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    
+    <!-- CDN para valores em Dinheiro -->
+    <script src="https://cdn.jsdelivr.net/gh/plentz/jquery-maskmoney@master/dist/jquery.maskMoney.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .w3-sidebar a {font-family: "Roboto", sans-serif}
+        body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+<header class="q">
+            <div class="conteiner-fluid">
+                <nav class="nav-bar">
+                    <div class="logo">
+                        <a class="name" href="index.php"><h1>BestGames</h1></a>
+                        
+                    </div>
+                    <div class="nav-list">
+                        <ul>
+                             
+                            <li class="nav-item">
+                                <div class="box-search"> 
+                                    <input class="form-control" type="search" id="pesquisar" placeholder="Search" aria-label="Search">
+                                    <button onclick="searchData()" class="btn btn-success">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                        </svg>
+                                    </button>
+                                </div>              
+                            </li>
+                                   
+                            <li class="nav-item">
+                                <a class="nav-link" href="listarProdutos.php?marcaConsole=Playstation">Playstation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="listarProdutos.php?marcaConsole=Nintendo">Nintendo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="listarProdutos.php?marcaConsole=Xbox">Xbox</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="login-button">
+                                    <ul class='navbar-nav'>
+                                        <li>
+                                            <div class='container'>
+                                                
+                                            </div>
+                                        </li>
+                                        <li class='nav-item dropdown'>
+                                            <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'><strong style='font-size:15px'></strong></a>
+                                                <ul class='dropdown-menu'>
+                                                    <li><a class='dropdown-item' href='visualizarPerfil.php?pagina=formLogin&idUsuario=$idCliente' title='Visualizar Perfil'>Meu Perfil</a></li>";
+                                            
+                                                        <li><a class='dropdown-item' href='meusProdutos.php?pagina=formProduto&idUsuario=$idCliente'>Meus Produtos</a></li>
+                                                     
+                                                            <li><a class='dropdown-item' href='meusPedidos.php?pagina=formProduto&idUsuario=$idCliente'>Meus Pedidos</a></li>            
+                                                    <li><a class='dropdown-item' href='logout.php?pagina=formLogin' title='Sair do Sistema'>Logout</a></li>
+                                                </ul>
+                                        </li>
+                                    </ul>
+                                
+                               
+                                        <ul class='navbar-nav'>
+                                           
+                                                <button><a class='nav-link active' href='formLogin.php?pagina=formLogin' title='Acessar o Sistema'>Login</a></button>
+                                        </ul>
+                                  
+                          
+                    </div>
+
+                
+                    
+                    
+                </nav>
+            </div>
+
+</header>
+<hr>
+<div class="row">
+    <div class='col-sm-6 col-md-3 col-xl-2' style='margin-bottom:30px;'>
+        <div class='card' style='width:100%; height:100%;'>
+            <div class='card-body' style='height:100% '>
+                <a href='#' style='text-decoration:none;' title='Visualizar Produto'>
+                    <img class='card-img-top' src='' alt='Foto do Produto'>
+                </a>
+            </div>
+            <div class='card-body text-center'>
+                <h4 class='card-title'>Nome aqui</h4>
+                <p class='card-text'>Valor: <b>R$ 1000</b></p>
+                <div class='d-grid' style='border-size:border-box'>
+
+                        <a class='btn btn-success' href='#' style='text-decoration:none;'  title='Visualizar Produto'>
+                            Visualizar Produto
+                        </a>  
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='col-sm-6 col-md-3 col-xl-2' style='margin-bottom:30px;'>
+        <div class='card' style='width:100%; height:100%;'>
+            <div class='card-body' style='height:100% '>
+                <a href='#' style='text-decoration:none;' title='Visualizar Produto'>
+                    <img class='card-img-top' src='' alt='Foto do Produto'>
+                </a>
+            </div>
+            <div class='card-body text-center'>
+                <h4 class='card-title'>Nome aqui</h4>
+                <p class='card-text'>Valor: <b>R$ 1000</b></p>
+                <div class='d-grid' style='border-size:border-box'>
+
+                        <a class='btn btn-success' href='#' style='text-decoration:none;'  title='Visualizar Produto'>
+                            Visualizar Produto
+                        </a>  
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='col-sm-6 col-md-3 col-xl-2' style='margin-bottom:30px;'>
+        <div class='card' style='width:100%; height:100%;'>
+            <div class='card-body' style='height:100% '>
+                <a href='#' style='text-decoration:none;' title='Visualizar Produto'>
+                    <img class='card-img-top' src='' alt='Foto do Produto'>
+                </a>
+            </div>
+            <div class='card-body text-center'>
+                <h4 class='card-title'>Nome aqui</h4>
+                <p class='card-text'>Valor: <b>R$ 1000</b></p>
+                <div class='d-grid' style='border-size:border-box'>
+
+                        <a class='btn btn-success' href='#' style='text-decoration:none;'  title='Visualizar Produto'>
+                            Visualizar Produto
+                        </a>  
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='col-sm-6 col-md-3 col-xl-2' style='margin-bottom:30px;'>
+        <div class='card' style='width:100%; height:100%;'>
+            <div class='card-body' style='height:100% '>
+                <a href='#' style='text-decoration:none;' title='Visualizar Produto'>
+                    <img class='card-img-top' src='' alt='Foto do Produto'>
+                </a>
+            </div>
+            <div class='card-body text-center'>
+                <h4 class='card-title'>Nome aqui</h4>
+                <p class='card-text'>Valor: <b>R$ 1000</b></p>
+                <div class='d-grid' style='border-size:border-box'>
+
+                        <a class='btn btn-success' href='#' style='text-decoration:none;'  title='Visualizar Produto'>
+                            Visualizar Produto
+                        </a>  
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='col-sm-6 col-md-3 col-xl-2' style='margin-bottom:30px;'>
+        <div class='card' style='width:100%; height:100%;'>
+            <div class='card-body' style='height:100% '>
+                <a href='#' style='text-decoration:none;' title='Visualizar Produto'>
+                    <img class='card-img-top' src='' alt='Foto do Produto'>
+                </a>
+            </div>
+            <div class='card-body text-center'>
+                <h4 class='card-title'>Nome aqui</h4>
+                <p class='card-text'>Valor: <b>R$ 1000</b></p>
+                <div class='d-grid' style='border-size:border-box'>
+
+                        <a class='btn btn-success' href='#' style='text-decoration:none;'  title='Visualizar Produto'>
+                            Visualizar Produto
+                        </a>  
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+        
+ 
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ 
+            
+    -->

@@ -1,4 +1,11 @@
-<?php include("header.php");
+<?php include("header.php"); ?>
+
+<div class="container-fluid">
+
+
+<?php
+    
+    $idCliente = $_SESSION["idCliente"];
 
     if(isset($_GET["idProduto"])){
         $idProduto = $_GET["idProduto"];
@@ -90,7 +97,7 @@
                                                             <p>Editar Produto</p>
                                                         </button>
                                                     </a>
-                                                    <a href='registrarVenda.php?pagina=formProduto&idProduto=$idProduto' title='Marcar como Vendido'>
+                                                    <a href='registrarVenda.php?pagina=formProduto&idProduto=$idProduto&idCliente=$idCliente' title='Marcar como Vendido'>
                                                         <button class='btn btn-outline-success'>
                                                             <i class='bi bi-check-circle' style='font-size:16pt;'></i>
                                                             <p>Marcar como Vendido</p>
@@ -102,7 +109,7 @@
                                     } else{
                                         if(isset($_SESSION['logado']) && $_SESSION['logado'] === true){
                                             echo "
-                                                <a href='#' title='Realizar Pedido'>
+                                                <a href='registrarVenda.php?idProduto=$idProduto&idCliente=$idCliente' title='Realizar Pedido'>
                                                     <button class='btn btn-outline-success'>
                                                         <i class='bi bi-clipboard-plus' style='font-size:16pt;'></i>
                                                         <p>Realizar Pedido</p>
